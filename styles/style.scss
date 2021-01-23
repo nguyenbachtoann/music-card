@@ -1,0 +1,82 @@
+@import "variables";
+@import "mixins";
+
+$bdrRdsWrapper: 15px;
+$cardWidth: 350px;
+$imgBdrRds: 8px;
+
+body {
+  @include wh100;
+  padding: 0;
+  margin: 0;
+  font-family: $font-fam;
+}
+
+#container {
+  @include center;
+  @include wh100;
+  #card-wrapper::before {
+    @include center;
+    @include wh100;
+    content: "";
+    z-index: -1;
+    position: fixed;
+    display: block;
+    background: url($card-img);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(70px);
+    transform: scale(1.5);
+  }
+  #card-wrapper {
+    @include center;
+    @include wh100;
+    position: fixed;
+    z-index: 0;
+    .card-wrapper-inner {
+      @include center(center, center, column);
+      width: 350px;
+      height: 450px;
+      background: white;
+      border-radius: $bdrRdsWrapper;
+      &-top {
+        width: 100%;
+        height: 80%;
+        @include center;
+        @include borderTopRadius($bdrRdsWrapper, $bdrRdsWrapper);
+        &-img {
+          height: 87%;
+          width: 87%;
+          border-radius: $imgBdrRds;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+        }
+      }
+      &-bottom {
+        width: 100%;
+        height: 20%;
+        @include center;
+        @include borderBottomRadius($bdrRdsWrapper, $bdrRdsWrapper);
+        .bottom-wrapper {
+          margin-top: -20px;
+          width: 87%;
+          height: 87%;
+          font-size: $secondary-text;
+          .card-desc {
+            margin-bottom: 6px;
+            &-text-title {
+              font-weight: 800;
+            }
+            &-text-singer {
+              font-weight: 500;
+            }
+            &-text-provider {
+              font-size: 0.8em;
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

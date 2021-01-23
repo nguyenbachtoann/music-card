@@ -1,0 +1,21 @@
+
+@mixin wh100{
+    height: 100%;
+    width: 100%;
+}
+
+@mixin center($alignItem: center, $justifyContent: center, $direction: row){
+    display: flex;
+    align-items: $alignItem;
+    justify-content: $justifyContent;
+    flex-direction: $direction;
+}
+
+@mixin borderTopRadius($left, $right){
+    border-top-left-radius: $left;
+    border-top-right-radius: $right;
+}
+@mixin borderBottomRadius($left, $right){
+    border-bottom-left-radius: $left;
+    border-bottom-right-radius: $right;
+}
