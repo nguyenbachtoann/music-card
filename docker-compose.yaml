@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: musiccard-dev
+    image: musiccard-dev
+    build:
+      context: .
+      args:
+        - NGINX_CONFIG_FILE=nginx.conf
