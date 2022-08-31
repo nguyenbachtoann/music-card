@@ -8,7 +8,7 @@ ARG NGINX_CONFIG_FILE
 COPY . /usr/share/nginx/html
 
 # Add your nginx.conf
-COPY /${NGINX_CONFIG_FILE} /etc/nginx/conf.d/default.conf
+COPY ${NGINX_CONFIG_FILE} /etc/nginx/conf.d/default.conf
 
 # Expose port
 EXPOSE 1209
