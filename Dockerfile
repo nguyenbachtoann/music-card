@@ -1,11 +1,13 @@
 # Bundle static assets with nginx
 FROM nginx:1.21.0-alpine as serve
-ARG NGINX_CONFIG_FILE
+ARG NGINX_CONFIG_FOLDER
 # Copy built assets from builder
 # /usr/share/nginx/html is static assets destination
 COPY . /usr/share/nginx/html
+RUN pwd
+RUN ls -l $NGINX_CONFIG_FOLDER
 # Add your nginx.conf
-COPY $NGINX_CONFIG_FILE /etc/nginx/conf.d/default.conf
+COPY $NGINX_CONFIG_FOLDER/nginx.conf /etc/nginx/conf.d/default.conf
 # Expose port
 EXPOSE 1209
 # Start nginx
