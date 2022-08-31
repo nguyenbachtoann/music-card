@@ -6,7 +6,6 @@ ARG NGINX_CONFIG_FILE
 # Copy built assets from builder
 # /usr/share/nginx/html is static assets destination
 COPY . /usr/share/nginx/html
-
 # Add your nginx.conf
 COPY ${NGINX_CONFIG_FILE} /etc/nginx/conf.d/default.conf
 
