@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: music-card
+    image: nguyenbachtoan/musiccard:f82c8162
+    tty: true
+    ports:
+      - "1209:81"

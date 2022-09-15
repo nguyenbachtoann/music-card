@@ -10,6 +10,6 @@ COPY . /usr/share/nginx/html
 COPY ${NGINX_CONFIG_FILE} /etc/nginx/conf.d/default.conf
 
 # Expose port
-EXPOSE 1212
+EXPOSE 81
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
